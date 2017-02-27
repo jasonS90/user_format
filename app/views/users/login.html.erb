@@ -1,0 +1,12 @@
+<!-- 로그인 페이지, 아래는 컨트롤러에서 언급한 경고 메시지를 화면에 출력하는 코드 -->
+<%= form_tag '/users/login_process' do %>
+  <%= text_field_tag :mail %>
+  <%= text_field_tag :password %>
+  <%= submit_tag "Login" %>
+<% end %>
+
+<% if flash[:alert] %>
+    <div class="alert">
+      <%= flash[:alert] %><br>
+    </div>
+<% end %>
